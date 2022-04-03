@@ -1,3 +1,3 @@
-# nodejs_blog
--Nghịch lung tung vậy
-##ĐỪng có mà đẻ ý
+# nodejs
+-Một ngày rảnh nên tôi nghịch lung tung
+#S1mple
