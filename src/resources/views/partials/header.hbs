@@ -1,37 +1,24 @@
-<head>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="#">S1mple</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+<header>
+    <div class="tabBar">
+        <div class="brandName">WHATEVER COFFEE SHOP<sup><i class="material-icons"
+                    style="font-size: 1.7vw;">star</i></sup></div>
+        <button class="tabBtn" onclick="location.href='/'" type="button">Trang chủ</button>
+        <button class="tabBtn" onclick="location.href='./introduction'" type="button">Giới thiệu</button>
+        <button class="tabBtn" onclick="location.href='./orderPage'" type="button">Đặt hàng</button>
+        <button class="tabBtn" onclick="location.href='./stores'" type="button">Cửa hàng</button>
+        <button class="tabBtn" onclick="location.href='./discount'" type="button">Khuyến mãi</button>
+        <div></div>
+        <button id="profile" onclick="location.href='#popup1'"><i class="fa fa-user-o"></i></button>
+    </div>
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
-            </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Dropdown
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="#">Action</a>
-                <a class="dropdown-item" href="#">Another action</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">Something else here</a>
-                </div>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link disabled" href="#">Disabled</a>
-            </li>
-            </ul>
-            <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-            </form>
+    <div id="popup1" class="overlay">
+        <div class="popup">
+            <h2>Login</h2>
+            <a class="close" href="#">&times;</a>
+            <input placeholder="Nhập số điện thoại của bạn" id="phoneNo" type="number"><BR />
+            <input placeholder="Nhập mật khẩu của bạn" id="password" type="password"><BR />
+            <button class="yellowBtn">ĐĂNG NHẬP</button><BR />
+            <button class="textBtn">Tạo tài khoản</button>
         </div>
-    </nav>
-</head>
+    </div>
+</header>
