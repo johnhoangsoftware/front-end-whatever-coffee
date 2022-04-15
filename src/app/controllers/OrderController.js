@@ -1,6 +1,8 @@
 class OrderController {
-    index(req, res) {
-        res.render('orderPage');
+    index(req, res, next) {
+        Product.find({})
+            .then(Products => { res.render('orderPage'), { product } })
+
     }
 }
 
