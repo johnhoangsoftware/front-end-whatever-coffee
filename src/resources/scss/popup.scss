@@ -35,6 +35,26 @@
     position: relative;
     transition: all 5s ease-in-out;
     gap: 1%;
+
+    ul {
+        width: 100%;
+      }
+    
+    ul li {
+        width: 30%;
+        list-style: none;
+        display: inline-block;
+        text-align: justify;
+        margin: 0.5%;
+        word-wrap: break-word;
+        color: black;
+    }
+
+    ul li:nth-child(2) {
+        text-align: center;
+    }
+      
+
     h2 {
         margin-top: 0;
         color: #333;

@@ -1,5 +1,5 @@
-const mongoose = require('mongoose');
-const schema = mongoose.Schema;
+const pg = require('pg');
+const schema = pg.Schema;
 
 const Product = new schema({
     name: { type: 'string', default: 'aaaa' },
@@ -8,4 +8,4 @@ const Product = new schema({
     orderDate: { type: 'date', default: Date.now() }
 });
 
-module.exports = mongoose.model('Product', Product);
+module.exports = pg.model('Product', Product);

@@ -24,8 +24,14 @@
     },
     "homepage": "https://github.com/johnhoangsoftware/nodejs_blog",
     "dependencies": {
+        "axios": "^0.26.1",
+        "dotenv": "^16.0.0",
         "express": "^4.17.3",
-        "mongoose": "^6.3.0"
+        "jsonwebtoken": "^8.5.1",
+        "mongoose": "^6.3.0",
+        "pg": "^8.7.3",
+        "react": "^17.0.0",
+        "react-dom": "^17.0.0"
     },
     "devDependencies": {
         "express-handlebars": "^6.0.3",

@@ -1,4 +1,17 @@
 <div class="content">
+    {{#if this.state}}
+        <script>
+            
+            updateState({{this.state}});
+
+            function updateState(state) {
+                sessionStorage.setItem('state', state);
+                console.log(state);
+            }
+
+            location.href = "/";
+        </script>
+    {{/if}}
     <ul class="slideshow">
         <li><span></span></li>
         <li><span></span></li>

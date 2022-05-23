@@ -1,4 +1,7 @@
 const orderRoutes = require('./order')
+const storesController = require('../app/controllers/StoreController');
+const homeRoutes = require('./home');
+const discountRoutes = require('./discount');
 
 function routes(app) {
 
@@ -10,11 +13,11 @@ function routes(app) {
 
     app.get('/policy', (req, res) => { res.render('policy') })
 
-    app.get('/stores', (req, res) => { res.render('stores') });
+    app.get('/stores', storesController.index);
 
-    app.get('/discount', (req, res) => { res.render('discount') });
+    app.use('/discount', discountRoutes);
 
-    app.get('/', (req, res) => { res.render('Home') });
+    app.use('/', homeRoutes);
 
 }
 

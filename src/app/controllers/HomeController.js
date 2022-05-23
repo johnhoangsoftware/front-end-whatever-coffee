@@ -1,10 +1,16 @@
 const axios = require('axios');
 const dotenv = require('dotenv');
+
 dotenv.config();
 //const localStorage = require('localStorage');
 class HomeController {
+
+
     index(req, res, next) {
-        res.render('Home');
+        var state = null;
+        res.render('Home', {
+            state
+        });
 
     }
 
@@ -15,40 +21,48 @@ class HomeController {
 
 
     login(req, res, next) {
-        axios.post('https://whatever-coffee-shop.herokuapp.com/api/auth/login', {
+        axios.post('https://whatever-coffee.herokuapp.com/api/auth/login', {
+                /*
+                username: "hanzo",
+                password: "15112002"
+                */
+               
+                
                 username: req.body.username,
                 password: req.body.password
+                
             })
-            .then(function(response) {
-                console.log(response.data);
-                var token = response.data;
-                //var token = LocalStorage.setItem('token', response.data.access_token);
-                //LocalStorage.setItem('token', response.data.access_token);
-                res.send(token);
-                // res.json(LocalStorage.getItem('token'));
-                //console.log(token);
-                //res.render('home');
-                // console.log(res.data);
-                // console.log(req.headers)
+            .then(() => {
+                var state = 1;
+                res.render('home', {
+                    state
+                });
             })
             .catch(function(error) {
+                res.redirect('/#login');
                 console.log(error);
             });
+    }
+
+    //[POST] /register 
+    register(req, res, next) {
+       axios('https://whatever-coffee.herokuapp.com/api/auth/register', {
+           method: 'POST',
+              data: {
+                username: req.body.username,
+                password: req.body.password,
+                dob: req.body.dob,
+                phone: req.body.phone,
+                role: 'admin'
+              }
+        }).then (response => {
+            console.log(response.data);
+                res.redirect('/#login');
+        }).catch(function (error) {
+            console.log(error);
+            res.redirect('/#create');
+        })
     }
 }
 
 module.exports = new HomeController;
-
-// authenticate(login, password)
-//     .then(function(authentication) {
-//         window.sessionStorage.setItem('token', authentication.token);
-//     })
-//     .then(getAccounts)
-//     .then(function(accounts) {
-//         // display the accounts page
-//         // ...
-//     })
-//     .catch(function(error) {
-//         // display error message in the login form
-//         // ...
-//     });

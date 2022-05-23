@@ -1,24 +1,108 @@
 <header>
     <div class="tabBar">
-        <div class="brandName">WHATEVER COFFEE SHOP<sup><i class="material-icons"
-                    style="font-size: 1.7vw;">star</i></sup></div>
+        <div class="brandName" onclick="location.href='/'">WHATEVER COFFEE SHOP<sup><i
+                    class="material-icons" style="font-size: 1.7vw;">star</i></sup></div>
+      
         <button class="tabBtn" onclick="location.href='/'" type="button">Trang chủ</button>
         <button class="tabBtn" onclick="location.href='./introduction'" type="button">Giới thiệu</button>
         <button class="tabBtn" onclick="location.href='./orderPage'" type="button">Đặt hàng</button>
         <button class="tabBtn" onclick="location.href='./stores'" type="button">Cửa hàng</button>
         <button class="tabBtn" onclick="location.href='./discount'" type="button">Khuyến mãi</button>
         <div></div>
-        <button id="profile" onclick="location.href='#popup1'"><i class="fa fa-user-o"></i></button>
+        <button id="profile" class="tabRoundBtn"><i class="fa fa-user-o"></i></button>
+        <button id="orders" class="tabRoundBtn"><i class="fa fa-shopping-cart"></i></button>
     </div>
 
-    <div id="popup1" class="overlay">
+    <div id="emProfile" class="overlay">
+        <div class="popup" style="color: black;">
+            <h2 id="emName">Tran Tuan Thinh</h2>
+            <a class="close" href="#">&times;</a>
+            <p><b>Số điện thoại:</b> <i id="emPhone">0865161655</i></p>
+            <p><b>Vị trí làm việc: </b><i id="emRole">Nhân viên bán hàng</i></p>
+            <button class="yellowBtn" id="logoutBtn">ĐĂNG XUẤT</button><BR />
+        </div>
+    </div>
+
+    <div id="login" class="overlay" name="login">
         <div class="popup">
-            <h2>Login</h2>
+            <h2>Đăng Nhập</h2>
+            <form method="POST" action="/login">
+                <label for="phoneNo">Username</label>
+                <input type="text" id="phoneNo" name="username" placeholder="Enter Username">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="Enter Password">
+                
+                <button type="submit" class="yellowBtn" id="loginBtn">Đăng Nhập</button>
+                <button class="textBtn" onclick="location.href='#create'">Tạo tài khoản</button>
+                <a class="close" href="/">&times;</a>
+            </form>
+            
+        </div>
+    </div>
+
+<!--
             <a class="close" href="#">&times;</a>
             <input placeholder="Nhập số điện thoại của bạn" id="phoneNo" type="number"><BR />
             <input placeholder="Nhập mật khẩu của bạn" id="password" type="password"><BR />
             <button class="yellowBtn">ĐĂNG NHẬP</button><BR />
             <button class="textBtn">Tạo tài khoản</button>
+            
+     <div id="login" class="overlay" name="login">
+        <div class="popup">
+            <h2>Login</h2>
+            <a class="close" href="#">&times;</a>
+            <input placeholder="Nhập số điện thoại của bạn" id="phoneNo" type="tel"><BR />
+            <input placeholder="Nhập mật khẩu của bạn" id="password" type="password"><BR />
+            <button class="yellowBtn" id="loginBtn">ĐĂNG NHẬP</button><BR />
+            <button class="textBtn" onclick="location.href='#create'">Tạo tài khoản</button>
         </div>
     </div>
+-->
+    
+    <div id="orderForm" class="overlay">
+        <div class="popup">
+            <h2>Đơn hàng</h2>
+            
+            <form method="POST" action="/orderPage/purchase">
+                <a class="close" href="#">&times;</a>
+                <input placeholder="Tên khách hàng" id="customerName" name="customerName" type="text"><BR />
+                <input placeholder="Số điện thoại" id="customerPhone" name="customerPhone" type="tel"><BR />
+
+                <b>
+                    <ul>
+                        <li>Tên mặt hàng</li>
+                        <li>Số lượng</li>
+                        <li>Giá</li>
+                    </ul>
+                </b>
+                <p id="orderedProducts">
+                </p>
+
+                <h2 class="text">=============</h2>
+
+                <p class="text" style="padding: left;">Tổng cộng: <strong id="total">0</strong><b>&#273</b></p>
+                <button type="submit" name="orListTotal" class="yellowBtn" id="orderBtn" value="">Đặt Hàng</button><br />
+                <button class="textBtn" style="color: orangered;" id="cancelBtn">Hủy</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="create" class="overlay">
+        <div class="popup">
+            <h2>Tạo tài khoản nhân viên</h2>
+            <form method="post" action="/register">
+                <a class="close" href="#">&times;</a>
+                <input placeholder="Họ và tên" id="name" type="text"><BR />
+                <input placeholder="Ngày sinh" name="dob" id="DOB" type="date"><BR />
+                <input placeholder="Số điện thoại" id="phone" name="phone" type="tel"><BR />
+                <input placeholder="Tên đăng nhập" id="secuPass" name="username" type="text"><BR />
+                <input placeholder="Mật khẩu cho nhân viên" name="password" id="newPass" type="password"><BR />
+                <input placeholder="Nhập lại mật khẩu" id="reNewPass" type="password"><BR />
+                
+                <button type="submit" class="yellowBtn">XÁC NHẬN</button><BR />
+            </form>
+        </div>
+    </div>
+
+
 </header>
